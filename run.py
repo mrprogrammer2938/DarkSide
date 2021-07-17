@@ -1,8 +1,14 @@
 import os
 import subprocess
 import sys
-from pyngrok import ngrok
-from colorama import Fore,init
+try:
+    from pyngrok import ngrok
+except ImportError:
+    os.system("pip3 install pyngrok")
+try:
+    from colorama import Fore,init
+except ImportError:
+    os.system("pip3 install colorama")
 import json
 import platform
 import time
